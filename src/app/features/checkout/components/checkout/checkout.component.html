@@ -1,0 +1,29 @@
+<p-menubar>
+    <ng-template pTemplate="end">
+        <ng-container>
+            <a routerLink="/" class="p-menuitem-link">
+                <span class="ml-2">Seguir comprando</span>
+            </a>            
+        </ng-container>
+        <ng-container>
+            <a routerLink="/cart" class="p-menuitem-link">
+                <span class="ml-2">Modificar</span>
+            </a>
+        </ng-container>
+    </ng-template>
+</p-menubar>
+<div class="checkout">
+    <h2>Resumen del Pedido</h2>
+  
+    <div>
+      <ul>
+        <li *ngFor="let item of cartItems">
+          {{ item.title }} - {{ item.price }}
+        </li>
+      </ul>
+  
+      <div class="total">
+        <strong>Total: </strong>
+        <span>{{ totalPrice | currency}}</span>
+      </div>
+    </div>

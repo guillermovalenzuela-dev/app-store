@@ -1,0 +1,19 @@
+<p-menubar>
+    <ng-template pTemplate="start">
+        <div class="flex align-items-center gap-2">
+            <input
+            type="text"
+            placeholder="Buscar por ID o nombre..." [(ngModel)]="searchQuery"
+            (keyup.enter)="onSearch()"
+          />
+          <button (click)="onSearch()">Buscar</button>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="end">
+        <ng-container>
+            <a routerLink="/cart" class="p-menuitem-link">
+                <span class="ml-2">Carrito</span>
+            </a>
+        </ng-container>
+    </ng-template>
+</p-menubar>

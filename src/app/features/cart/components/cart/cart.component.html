@@ -1,0 +1,25 @@
+<p-menubar>
+    <ng-template pTemplate="end">
+        <ng-container>
+            <a routerLink="/" class="p-menuitem-link">
+                <span class="ml-2">Home</span>
+            </a>            
+        </ng-container>
+        <ng-container>
+            <a routerLink="/checkout" class="p-menuitem-link">
+                <span class="ml-2">Check Out</span>
+            </a>
+        </ng-container>
+    </ng-template>
+</p-menubar>
+<div class="cart">
+    <h2>Carrito de Compras</h2>
+    <ul>
+      <li *ngFor="let item of cartItems">
+        {{ item.title }} - {{ item.price  }}
+        <button (click)="removeFromCart(item)">Eliminar</button>
+      </li>
+    </ul>
+
+    <button (click)="clearCart()">Vaciar Carrito</button>
+  </div>
